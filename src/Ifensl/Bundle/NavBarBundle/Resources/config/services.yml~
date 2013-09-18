@@ -1,9 +1,0 @@
-services:
-     ifensl_nav_bar.generator.json:
-        class: Ifensl\Bundle\NavBarBundle\Generator\JsonMenuGenerator
-        arguments: [%ifensl_nav_bar.menu%]
-
-     ifensl_nav_bar.generator.html:
-        class: Ifensl\Bundle\NavBarBundle\Generator\JsonMenuGenerator
-        arguments: [%ifensl_nav_bar.menu%, @templating]
-
