@@ -1,0 +1,36 @@
+<?php
+
+namespace Ifensl\Bundle\NavBarBundle;
+
+class MenuGenerator
+{
+    protected $menu;
+
+    /**
+     * Constructor
+     *
+     * @param array $menu
+     */
+    public function __construct($menu)
+    {
+        $this->menu = $menu
+    }
+
+    /**
+     * Get Menu
+     *
+     * @return array
+     */
+    public function getMenu()
+    {
+        return $this->menu;
+    }
+
+    /**
+     * Generate the menu based on configuration in a given format
+     */
+    public function generate($format)
+    {
+        
+    }
+}

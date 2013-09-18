@@ -63,3 +63,11 @@ swiftmailer:
     username:  %mailer_user%
     password:  %mailer_password%
     spool:     { type: memory }
+
+# Ifensl configuration
+ifensl_nav_bar:
+#    title: ECONOMIE DU WEB
+    menu:
+        home:
+            title: Accueil
+            url: http://www.google.com

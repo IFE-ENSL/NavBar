@@ -1,0 +1,10 @@
+<div id="ifensl_nav_bar">
+  <a href="{{ }}" alt="{{ }}" title="{{ }}"></a>
+  <ul>
+    <li>
+      <a href="{{ }}" alt="{{ }}" title="{{ }}">
+          {{ }}
+      </a>
+    </li>
+  </ul>
+</div>

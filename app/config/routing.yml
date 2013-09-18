@@ -1,0 +1,5 @@
+ifensl_nav_bar:
+    resource: "@IfenslNavBarBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
