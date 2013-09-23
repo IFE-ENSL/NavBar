@@ -1,0 +1,51 @@
+var $ = document;
+var cssId = 'ifensl_nav_bar_style_id';
+if (!$.getElementById(cssId)) {
+    var head  = $.getElementsByTagName('head')[0];
+    var link  = $.createElement('link');
+    link.id   = cssId;
+    link.rel  = 'stylesheet';
+    link.type = 'text/css';
+    link.href = '{{ path('ifensl_navbar_menu_nav', { '_format': 'css' }) }}';
+    link.media = 'all';
+    head.appendChild(link);
+}
+
+window.onload = function() {
+    var body        = $.getElementsByTagName('body')[0];
+
+    var nav         = $.createElement('div');
+    nav.id          = 'ifensl_nav_bar';
+
+    var container   = $.createElement('div');
+    container.class = 'container';
+
+    var brand       = $.createElement('div');
+    brand.class     = 'brand active';
+
+    var brand_a     = $.createElement('a');
+    brand_a.href    = '{{ menu.brand_url|e }}';
+    brand_a.alt     = '{{ menu.brand_title }}';
+    brand_a.title   = '{{ menu.brand_title }}';
+    brand_a.appendChild($.createTextNode('{{ menu.brand_title }}'));
+
+    brand.appendChild(brand_a);
+    container.appendChild(brand);
+
+    var ul         = $.createElement('ul');
+
+/*
+    {% for k, item in menu.items %}
+    <li id="ifensl_nav_bar_item_{{ k }}">
+      <a href="{{ item.url }}" alt="{{ item.title }}" title="{{ item.title }}">
+          {{ item.title }}
+      </a>
+    </li>
+    {% endfor %}
+*/
+
+    container.appendChild(ul);
+
+    nav.appendChild(container);
+    body.appendChild(nav);
+};
