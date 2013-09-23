@@ -26,8 +26,9 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
-                ->scalarNode('title')->defaultValue('ECONOMIE DU WEB')->end()
-                ->arrayNode('menu')
+                ->scalarNode('brand_title')->isRequired()->end()
+                ->scalarNode('brand_url')->isRequired()->end()
+                ->arrayNode('items')
                     ->isRequired()
                     ->requiresAtLeastOneElement()
                     ->prototype('array')

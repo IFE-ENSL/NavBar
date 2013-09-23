@@ -7,3 +7,6 @@ services:
         class: Ifensl\Bundle\NavBarBundle\Generator\HtmlMenuGenerator
         arguments: [%ifensl_nav_bar.menu%, @templating]
 
+     ifensl_nav_bar.generator.css:
+        class: Ifensl\Bundle\NavBarBundle\Generator\CssMenuGenerator
+        arguments: [%ifensl_nav_bar.menu%, @templating]

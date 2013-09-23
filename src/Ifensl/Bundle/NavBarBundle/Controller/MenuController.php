@@ -12,7 +12,6 @@ class MenuController extends Controller
 {
     /**
      * @Route("/nav.{_format}", defaults={"_format"="html"})
-     * @Template()
      */
     public function navAction(Request $request)
     {
@@ -23,7 +22,6 @@ class MenuController extends Controller
             $format
         ));
 
-        var_dump($generator->generate());die('test');
         $response = new Response();
         $response->setContent($generator->generate());
         $response->headers->set(

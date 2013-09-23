@@ -1,10 +1,38 @@
+{% extends "IfenslNavBarBundle::layout.html.twig" %}
+
+{% block body %}
 <div id="ifensl_nav_bar">
-  <a href="{# #}" alt="{# #}" title="{# #}"></a>
-  <ul>
-    <li>
-      <a href="{# #}" alt="{# #}" title="{# #}">
-          {# #}
+  <div class="container">
+    <div class="brand active">
+      <a href="{{ menu.brand_url }}" alt="{{ menu.brand_title }}" title="{{ menu.brand_title }}">
+        {{ menu.brand_title }}
       </a>
-    </li>
-  </ul>
+    </div>
+    <ul>
+      {% for k, item in menu.items %}
+      <li id="ifensl_nav_bar_item_{{ k }}">
+        <a href="{{ item.url }}" alt="{{ item.title }}" title="{{ item.title }}">
+            {{ item.title }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
 </div>
+
+<script type="text/javascript">
+var $ = document;
+var cssId = 'ifensl_nav_bar_style_id';
+if (!$.getElementById(cssId)) {
+    var head  = $.getElementsByTagName('head')[0];
+    var link  = $.createElement('link');
+    link.id   = cssId;
+    link.rel  = 'stylesheet';
+    link.type = 'text/css';
+    link.href = '{{ path('ifensl_navbar_menu_nav', { '_format': 'css' }) }}';
+    link.media = 'all';
+    head.appendChild(link);
+}
+</script>
+
+{% endblock %}

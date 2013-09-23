@@ -66,8 +66,26 @@ swiftmailer:
 
 # Ifensl configuration
 ifensl_nav_bar:
-#    title: ECONOMIE DU WEB
-    menu:
+    brand_title: // ECONOMIE DU WEB
+    brand_url: http://www.google.com
+    items:
         home:
             title: Accueil
             url: http://www.google.com
+            color: "#FFF"
+        courses_map:
+            title: Plan de cours
+            url: http://www.google.com
+            color: "#00F"
+        ressources:
+            title: Ressources
+            url: http://www.google.com
+            color: "#0F0"
+        forum:
+            title: Forum
+            url: http://www.google.com
+            color: "#F00"
+        notebook:
+            title: Cahier
+            url: http://www.google.com
+            color: "#F0F"
