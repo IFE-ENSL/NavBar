@@ -13,4 +13,5 @@ app/config/parameters.ini
 app/config/parameters.yml
 
 #IDE Specificities
+# Gedit files
 *~
