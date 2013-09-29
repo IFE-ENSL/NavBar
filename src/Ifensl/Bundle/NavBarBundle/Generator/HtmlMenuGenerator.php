@@ -2,7 +2,7 @@
 
 namespace Ifensl\Bundle\NavBarBundle\Generator;
 
-use Symfony\Bundle\TwigBundle\Debug\TimedTwigEngine;
+use Symfony\Bundle\TwigBundle\TwigEngine;
 
 class HtmlMenuGenerator extends AbstractMenuGenerator
 {
@@ -14,7 +14,7 @@ class HtmlMenuGenerator extends AbstractMenuGenerator
      * @param array $menu
      * @param TimedTwigEngine $templating
      */
-    public function __construct($menu, TimedTwigEngine $templating)
+    public function __construct($menu, TwigEngine $templating)
     {
         parent::__construct($menu);
         $this->templating = $templating;

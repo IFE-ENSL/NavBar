@@ -12,37 +12,39 @@ if (!$.getElementById(cssId)) {
 }
 
 window.onload = function() {
-    var body        = $.getElementsByTagName('body')[0];
+    var body = $.getElementsByTagName('body')[0];
 
-    var nav         = $.createElement('div');
-    nav.id          = 'ifensl_nav_bar';
+    var nav = $.createElement('div');
+    nav.id  = 'ifensl_nav_bar';
 
-    var container   = $.createElement('div');
-    container.class = 'container';
+    var container       = $.createElement('div');
+    container.className = 'container';
 
     var brand       = $.createElement('div');
-    brand.class     = 'brand active';
+    brand.className = 'brand active';
 
-    var brand_a     = $.createElement('a');
-    brand_a.href    = '{{ menu.brand_url|e }}';
-    brand_a.alt     = '{{ menu.brand_title }}';
-    brand_a.title   = '{{ menu.brand_title }}';
+    var brand_a   = $.createElement('a');
+    brand_a.href  = '{{ menu.brand_url|e }}';
+    brand_a.alt   = '{{ menu.brand_title }}';
+    brand_a.title = '{{ menu.brand_title }}';
     brand_a.appendChild($.createTextNode('{{ menu.brand_title }}'));
 
     brand.appendChild(brand_a);
     container.appendChild(brand);
 
-    var ul         = $.createElement('ul');
+    var ul = $.createElement('ul');
 
-/*
     {% for k, item in menu.items %}
-    <li id="ifensl_nav_bar_item_{{ k }}">
-      <a href="{{ item.url }}" alt="{{ item.title }}" title="{{ item.title }}">
-          {{ item.title }}
-      </a>
-    </li>
+        var li_{{ k }}  = $.createElement('li');
+        li_{{ k }}.id   = 'ifensl_nav_bar_item_{{ k }}';
+        var a_{{ k }}   = $.createElement('a');
+        a_{{ k }}.href  = '{{ item.url|e }}';
+        a_{{ k }}.alt   = '{{ item.title }}';
+        a_{{ k }}.title = '{{ item.title }}';
+        a_{{ k }}.appendChild($.createTextNode('{{ item.title }}'));
+        li_{{ k }}.appendChild(a_{{ k }});
+        ul.appendChild(li_{{ k }});
     {% endfor %}
-*/
 
     container.appendChild(ul);
 
