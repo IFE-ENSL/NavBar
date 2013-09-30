@@ -29,7 +29,7 @@ if (!$.getElementById(cssId)) {
     link.id   = cssId;
     link.rel  = 'stylesheet';
     link.type = 'text/css';
-    link.href = '{{ path('ifensl_navbar_menu_nav', { '_format': 'css' }) }}';
+    link.href = '{{ url('ifensl_navbar_menu_nav', { '_format': 'css' }) }}';
     link.media = 'all';
     head.appendChild(link);
 }
