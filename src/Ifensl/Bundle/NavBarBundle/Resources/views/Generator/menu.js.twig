@@ -1,8 +1,8 @@
-var $ = document;
+var document = document;
 var cssId = 'ifensl_nav_bar_style_id';
-if (!$.getElementById(cssId)) {
-    var head  = $.getElementsByTagName('head')[0];
-    var link  = $.createElement('link');
+if (!document.getElementById(cssId)) {
+    var head  = document.getElementsByTagName('head')[0];
+    var link  = document.createElement('link');
     link.id   = cssId;
     link.rel  = 'stylesheet';
     link.type = 'text/css';
@@ -12,36 +12,36 @@ if (!$.getElementById(cssId)) {
 }
 
 window.onload = function() {
-    var body = $.getElementsByTagName('body')[0];
+    var body = document.getElementsByTagName('body')[0];
 
-    var nav = $.createElement('div');
+    var nav = document.createElement('div');
     nav.id  = 'ifensl_nav_bar';
 
-    var container       = $.createElement('div');
+    var container       = document.createElement('div');
     container.className = 'container';
 
-    var brand       = $.createElement('div');
+    var brand       = document.createElement('div');
     brand.className = 'brand active';
 
-    var brand_a   = $.createElement('a');
+    var brand_a   = document.createElement('a');
     brand_a.href  = '{{ menu.brand_url|e }}';
     brand_a.alt   = '{{ menu.brand_title }}';
     brand_a.title = '{{ menu.brand_title }}';
-    brand_a.appendChild($.createTextNode('{{ menu.brand_title }}'));
+    brand_a.appendChild(document.createTextNode('{{ menu.brand_title }}'));
 
     brand.appendChild(brand_a);
     container.appendChild(brand);
 
-    var ul = $.createElement('ul');
+    var ul = document.createElement('ul');
 
     {% for k, item in menu.items %}
-        var li_{{ k }}  = $.createElement('li');
+        var li_{{ k }}  = document.createElement('li');
         li_{{ k }}.id   = 'ifensl_nav_bar_item_{{ k }}';
-        var a_{{ k }}   = $.createElement('a');
+        var a_{{ k }}   = document.createElement('a');
         a_{{ k }}.href  = '{{ item.url|e }}';
         a_{{ k }}.alt   = '{{ item.title }}';
         a_{{ k }}.title = '{{ item.title }}';
-        a_{{ k }}.appendChild($.createTextNode('{{ item.title }}'));
+        a_{{ k }}.appendChild(document.createTextNode('{{ item.title }}'));
         li_{{ k }}.appendChild(a_{{ k }});
         ul.appendChild(li_{{ k }});
     {% endfor %}
